@@ -1,0 +1,25 @@
+#!/bin/bash/
+echo "nhap so file muon xoa"
+echo "bat dau tu n="
+read n
+# Kiểm tra nếu n không phải là một số
+if ! [[ "$n" =~ ^[0-9]+$ ]]; then
+    echo "Lỗi: Hãy nhập một số nguyên dương."
+    exit 1
+fi	
+echo "ket thuc den m="
+read m
+# Kiểm tra nếu n không phải là một số
+if ! [[ "$m" =~ ^[0-9]+$ ]]; then
+    echo "Lỗi: Hãy nhập một số nguyên dương."
+    exit 1
+fi
+#vong lap xoa
+
+for((i=$n;i<=$m;i++))
+do
+	rm -rf "file$i"
+	echo "xoa tep file$i thanh cong"
+done
+
+echo "completed"

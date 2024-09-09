@@ -1,0 +1,20 @@
+#!/bin/bash
+
+echo "Nhập số lượng tệp bạn muốn tạo: "
+read n
+
+# Kiểm tra nếu n không phải là một số
+if ! [[ "$n" =~ ^[0-9]+$ ]]; then
+    echo "Lỗi: Hãy nhập một số nguyên dương."
+    exit 1
+fi
+
+# Vòng lặp tạo các tệp
+for (( i=1; i<=$n; i++ ))
+do
+    touch "file$i"
+    echo "Tạo tệp test$i thành công."
+done
+
+echo "Quá trình tạo tệp đã hoàn tất."
+
